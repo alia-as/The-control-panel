@@ -6,8 +6,21 @@
     <title>Control Panel </title>
 </head>
 <body>
-This is the first page
+This is the first page  {{request.user}}
 
-{{request.user}}
+<li>
+    Click
+    <a href="http://127.0.0.1:8000/teacher">
+        here
+    </a>
+    if you are the teacher
+</li>
+<li>
+    And
+    <a href="http://127.0.0.1:8000/student">
+        here
+    </a>
+    if you are an student
+</li>
 </body>
 </html>

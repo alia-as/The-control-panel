@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>uploading</title>
+    <title>upload</title>
 </head>
 <body>
-<form method="post"> {% csrf_token %}
+Here you could upload your videos
+<form method="POST"> {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="save"/>
 </form>

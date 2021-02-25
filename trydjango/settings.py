@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'teacher',
     'pages',
     'videos',
-
+    'exercises',
 ]
 
 MIDDLEWARE = [
@@ -59,8 +59,7 @@ ROOT_URLCONF = 'trydjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"templates") ,
-                 "\\Users\\Elham moin\\Desktop\\Hi\pyjet\\trydjango\\src\\videos"],
+        'DIRS': [os.path.join(BASE_DIR,"templates") ,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

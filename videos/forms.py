@@ -11,5 +11,3 @@ class film_form(forms.ModelForm):
             return the_movie
         else:
             raise forms.ValidationError("It must be mkv movie")
-# class raw_film_form(forms.Form):
-#     movie   = forms.CharField(max_length=20)

@@ -17,17 +17,3 @@ def upload_view(request , *args,**kwargs):
         else:
             print("Errors: \t",myform.errors)
     return render(request , "upload_temp.html",{'form' : myform})
-# def upload_view(request,*args,**kwargs):
-#     if request.method == "POST" :
-#         form = film_form(request.POST or None)
-#         print("Heeree i s the formmmmmmmmmmmmmmmmmm")
-#         if form.is_valid():
-#             print("OKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKk")
-#             form.save()
-#             form = film_form()
-#         else:
-#             print(form.errors)
-#     else:
-#         form = film_form()
-#     contex = {'form' : form}
-#     return render(request,"upload_temp.html",contex)

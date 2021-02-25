@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Exercise Page</title>
+</head>
+<body>
+Here you can see your exercises and see your grades
+{% for obj in all %}
+    <p>{{ obj.id }} - {{ obj.exercise_name }}</p>
+{% endfor %}
+</body>
+</html>

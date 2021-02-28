@@ -1,7 +1,15 @@
 from django import forms
 from .models import exercise
 
-class exercise_form(forms.ModelForm):
+class exercise_form_tea(forms.ModelForm):
     class Meta:
         model = exercise
-        fields = ['exercise_name' , 'grade']
+        fields = ['exercise_name' ,]
+class exercise_form_stu(forms.ModelForm):
+    class Meta:
+        model = exercise
+        fields = ['exercise_file' ,]
+class exercise_form_tea_grade(forms.ModelForm):
+    class Meta:
+        model = exercise
+        fields = ['grade' ,]

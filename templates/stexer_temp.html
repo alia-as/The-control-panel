@@ -9,7 +9,7 @@ Here you can see your exercises and see your grades
 
 {% for obj in all %}
     <p>
-        <a href="{{ obj.get_absolute_url_stu }}">
+        <a href="/student-exercise/{{ obj.id }}">
         {{ obj.id }} - {{ obj.exercise_name }}
         </a>
     </p>

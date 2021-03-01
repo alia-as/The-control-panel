@@ -11,3 +11,6 @@ class film_form(forms.ModelForm):
             return the_movie
         else:
             raise forms.ValidationError("It must be mkv movie")
+class upload_form(forms.Form):
+    title = forms.CharField(max_length=50)
+    video = forms.FileField()

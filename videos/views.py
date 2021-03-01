@@ -1,6 +1,6 @@
 from django.shortcuts import render , get_object_or_404
 from .models import film
-from .forms import film_form
+from .forms import film_form , upload_form
 
 # Create your views here.
 def video_view(request,*args,**kwargs):
@@ -10,10 +10,11 @@ def video_view(request,*args,**kwargs):
 def upload_view(request , *args,**kwargs):
     myform = film_form()
     if request.method == "POST":
-        myform = film_form(request.POST)
+        myform = film_form(request.POST , request.FILES)
         if myform.is_valid():
             print("CLeaned data :\t",myform.cleaned_data)
             myform.save()
+            print("film savedddddd")
         else:
             print("Errors: \t",myform.errors)
     return render(request , "upload_temp.html",{'form' : myform})

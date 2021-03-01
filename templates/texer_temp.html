@@ -5,11 +5,20 @@
     <title>Teacher Exercise Page</title>
 </head>
 <body>
-Here you could put exercises and give grades
+Here you can see your exercises and see your grades
 
-<form method="POST"> {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="save"/>
-</form>
+{% for obj in all %}
+    <p>
+        <a href="/teacher-exercise/{{ obj.id }}">
+        {{ obj.id }} - {{ obj.exercise_name }}
+        </a>
+    </p>
+{% endfor %}
+<li>
+    And you can add exercises
+    <a href="http://127.0.0.1:8000/add-exercise/">
+        here
+    </a>
+</li>
 </body>
 </html>

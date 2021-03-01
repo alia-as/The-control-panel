@@ -19,7 +19,7 @@ from pages.views import home_view , student_view , teacher_view
 from teacher.views import teacherview
 from student.views import add_student
 from videos.views import video_view , upload_view
-from exercises.views import stu_exer_view , tea_exer_view , lookup_view , delete_view
+from exercises.views import stu_exer_view , tea_add_exer_view , tea_exercises , exercise_view# , lookup_view , delete_view
 urlpatterns = [
     path('', home_view),
     path('add-student',add_student),
@@ -28,8 +28,11 @@ urlpatterns = [
     path('student/', student_view),
     path('teacher/', teacherview),
     path('admin/', admin.site.urls),
-    path('student-exercise/',stu_exer_view),
-    path('teacher-exercise/',tea_exer_view),
-    path('student-exercise/<int:id>/',lookup_view,name = "exercise"),
-    path('student-exercise/<int:id>/delete/',delete_view,name = "delete_exercise"),
+    path('exercises/',stu_exer_view),
+    path('add-exercise/',tea_add_exer_view),
+    path('teacher-exercise/',tea_exercises),
+    path('teacher-exercise/<int:id>/',exercise_view),
+    path('student-exercise/<int:id>/',exercise_view),
+    # path('student-exercise/<int:id>/',lookup_view,name = "exercise"),
+    # path('student-exercise/<int:id>/delete/',delete_view,name = "delete_exercise"),
 ]

@@ -1,9 +1,10 @@
 from django.shortcuts import render , redirect, HttpResponse
 from .models import student
-from .forms import stu_add_form
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User , Group , Permission
 # Create your views here.
-
+# teacher = Group.objects.get_or_create(name="teacher" )
+#
+# students = Group.objects.get_or_create(name="students")
 def add_student(request, *args, **kwargs):
     stud = stu_add_form()
     if request.method == "POST":

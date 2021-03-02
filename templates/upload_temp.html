@@ -6,9 +6,9 @@
 </head>
 <body>
 Here you could upload your videos
-<form method="POST"> {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="save"/>
+<form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+    <input type="file" name="video">
+    <button type="submit">Upload</button>
 </form>
 </body>
 </html>

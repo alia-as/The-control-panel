@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
+from django.conf import settings
+from django.conf.urls.static import static
+
 from pages.views import home_view , student_view , teacher_view
 from teacher.views import teacherview
 from student.views import add_student
@@ -38,3 +41,5 @@ urlpatterns = [
     # path('student-exercise/<int:id>/',lookup_view,name = "exercise"),
     # path('student-exercise/<int:id>/delete/',delete_view,name = "delete_exercise"),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

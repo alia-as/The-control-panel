@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise detail</title>
+</head>
+<body>
+<p>{{ exercise.exercise_name }}</p>
+<p>{{ exercise.grade }}</p>
+<p>{{ exercise.exercise_file }}</p>
+<p>{{ exercise.date }}</p>
+<p>{{ exercise.is_uploaded }}</p>
+<li>
+    Click
+    <a href="/student-exercise/{{ exercise.id }}/upload/">
+        here
+    </a>
+    to upload your file
+</li>
+</body>
+</html>

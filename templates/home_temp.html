@@ -7,7 +7,7 @@
 </head>
 <body>
 This is the first page  {{request.user}}
-
+{% if user.is_authenticated %}
 <li>
     Click
     <a href="http://127.0.0.1:8000/teacher">
@@ -28,5 +28,15 @@ This is the first page  {{request.user}}
         here
     </a>
 </li>
+{% else %}
+<p>you are not login</p>
+<p>
+<a href="/accounts/login/">
+    Come here
+</a>
+to login
+</p>
+{% endif %}
+
 </body>
 </html>

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'pages',
     'videos',
     'exercises',
+
 ]
 
 MIDDLEWARE = [

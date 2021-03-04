@@ -1,6 +1,5 @@
-from django.shortcuts import render , get_object_or_404
+from django.shortcuts import render
 from .models import film
-from .forms import film_form
 from django.core.files.storage import FileSystemStorage
 
 # Create your views here.

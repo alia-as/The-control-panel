@@ -17,14 +17,16 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.shortcuts import HttpResponse
 
 from pages.views import home_view , student_view , teacher_view
 from teacher.views import teacherview
-from student.views import add_student
+from student.views import add_student , profile
 from videos.views import video_view , upload_view
 from exercises.views import tea_add_exer_view , tea_exercises,stu_exercises , exercise_tea_view , exercise_stu_view, stu_upload_view # , lookup_view , delete_view
 urlpatterns = [
-    path('accounts/',include('django.contrib.auth.urls')),
+    path('accounts/',include('django.contrib.auth.urls'), name="accounts"),
+    path('accounts/profile/',profile.as_view()),
     path('', home_view),
     path('add-student/',add_student),
     path('upload/',upload_view),

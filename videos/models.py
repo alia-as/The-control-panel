@@ -4,3 +4,4 @@ from django.db import models
 class film(models.Model):
     movie_url = models.URLField(default=None)
     movie_name = models.CharField(default=None , max_length=50)
+    movie_date = models.DateField(auto_now=True)

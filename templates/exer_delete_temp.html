@@ -5,9 +5,20 @@
     <title>Deleting</title>
 </head>
 <body>
+{% if user.is_authenticated %}
+<p>Tap <a href="http://127.0.0.1:8000/accounts/logout/">here</a> to log out!</p>
 <form action="." method="POST"> {% csrf_token %}
     <h1>Do you want to delete the "{{ obj.exercise_name }}" ? </h1>
     <p> <input type="submit" value="YES"/> <a href="../"> cancel </a></p>
 </form>
+{% else %}
+<p>you are not login</p>
+<p>
+<a href="/accounts/login/">
+    Come here
+</a>
+to login
+</p>
+{% endif %}
 </body>
 </html>

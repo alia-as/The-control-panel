@@ -8,6 +8,7 @@
 <body>
 This is the first page  {{request.user}}
 {% if user.is_authenticated %}
+<p>Tap <a href="http://127.0.0.1:8000/accounts/logout/">here</a> to log out!</p>
 <li>
     Click
     <a href="http://127.0.0.1:8000/teacher">

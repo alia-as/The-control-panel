@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+<p>Tap <a href="http://127.0.0.1:8000/accounts/logout/">here</a> to log out!</p>
+{% if user.username == "abbas" %}
+Hello Sir
+<p>Tap <a href="http://127.0.0.1:8000/teacher/">here</a> to go to your page!</p>
+{% else %}
+Hi students
+<p>Tap <a href="http://127.0.0.1:8000/student/">here</a> to go to your page!</p>
+{% endif %}
+</body>
+</html>

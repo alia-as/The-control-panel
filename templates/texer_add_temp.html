@@ -11,7 +11,7 @@ Here you could put exercises and give grades
 
 <form method="POST"> {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="save"/>
+    <input type="submit" value="save">
 </form>
 {% else %}
 <p>you are not login</p>

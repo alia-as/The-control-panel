@@ -2,21 +2,28 @@ from django.shortcuts import render , get_object_or_404
 from .forms import exercise_form_tea,exercise_form_tea_grade , exercise_form_stu
 from .models import exercise
 from django import forms
+from django.shortcuts import HttpResponse
+from django.core.files.storage import FileSystemStorage
 # Create your views here.
 
 def stu_exercises(request , *args,**kwargs):
     all_exer = exercise.objects.all()
     return render(request,"stexer_temp.html",{"all" : all_exer})
 def stu_upload_view(request , id , *args , **kwargs):
-    exercise_file = forms.CharField(max_length=100)
-    #ex = exercise.objects.get(id=id)
-    if request.method == "POST":
+    exercise_fileee = exercise.objects.get(id=id)
 
-        print("Tryiiiiiiiiiiiiiing")
-        print("Foooooooooooooooooooorms",exercise_file)
-    return render(request, "exer_upload_temp.html", {'form' : exercise_file})
+    context = {}
+    if request.method == "POST":
+        exer = request.FILES["my_file"]
+        fs = FileSystemStorage()
+        name = fs.save(exer.name, exer)
+        context['url'] = fs.url(name)
+        exercise_fileee.exercise_file = fs.url(name)
+        exercise_fileee.exercise_file_name = exer.name
+        exercise_fileee.save()
+    return render(request, "exer_upload_temp.html", context)
 def tea_add_exer_view(request,*args,**kwargs):
-    exer = exercise_form_tea()
+    exer = exercise_form_tea(request.POST or None)
     if request.method == "POST":
         exer = exercise_form_tea(request.POST)
         if exer.is_valid():
@@ -34,13 +41,3 @@ def exercise_stu_view(request , id , *args , **kwargs):
 def exercise_tea_view(request , id , *args , **kwargs):
     ex = exercise.objects.get(id=id)
     return render(request,"exers_tea_temp.html",{'exercise' : ex})
-# def lookup_view(request,id):
-#     obj = exercise.objects.get(id = id)
-#     return render(request,"lookup_temp.html",{'obj' : obj})
-# def delete_view(request , id):
-#     obj = get_object_or_404(exercise, id=id)
-#     if request.method == "POST":
-#         print("in deleting" , obj)
-#         obj.delete()
-#         print("deleted")
-#     return render(request,"exer_delete_temp.html" , {'obj' : obj})

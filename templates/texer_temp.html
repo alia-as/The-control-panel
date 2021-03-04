@@ -7,8 +7,8 @@
 <body>
 {% if user.is_authenticated and user.username == "abbas" %}
 <p>Tap <a href="http://127.0.0.1:8000/accounts/logout/">here</a> to log out!</p>
+{% if all %}
 Here you can see your exercises and see your grades
-
 {% for obj in all %}
     <p>
         <a href="/teacher-exercise/{{ obj.id }}">
@@ -16,12 +16,15 @@ Here you can see your exercises and see your grades
         </a>
     </p>
 {% endfor %}
-<li>
-    And you can add exercises
+{% else %}
+There is no exercises yet
+{% endif %}
+<p>
+    You can add exercises
     <a href="http://127.0.0.1:8000/add-exercise/">
         here
     </a>
-</li>
+</p>
 {% else %}
 <p>you are not login</p>
 <p>

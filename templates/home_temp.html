@@ -6,38 +6,8 @@
     <title>Control Panel </title>
 </head>
 <body>
-This is the first page  {{request.user}}
-{% if user.is_authenticated %}
-<p>Tap <a href="http://127.0.0.1:8000/accounts/logout/">here</a> to log out!</p>
-<li>
-    Click
-    <a href="http://127.0.0.1:8000/teacher">
-        here
-    </a>
-    if you are the teacher
-</li>
-<li>
-    And
-    <a href="http://127.0.0.1:8000/student">
-        here
-    </a>
-    if you are an student
-</li>
-<li>
-    you can also add student
-    <a href="http://127.0.0.1:8000/add-student">
-        here
-    </a>
-</li>
-{% else %}
-<p>you are not login</p>
-<p>
-<a href="/accounts/login/">
-    Come here
-</a>
-to login
-</p>
-{% endif %}
-
+Hi  {{request.user}}  How are you?
+<br>
+Tap <a href="/accounts/profile/">here</a> to start our journey
 </body>
 </html>

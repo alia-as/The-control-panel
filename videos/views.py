@@ -11,7 +11,7 @@ def upload_view(request , *args,**kwargs):
     movie = film()
     context = {}
     if request.method == "POST":
-        video = request.FILES["video"]
+        video = request.FILES["file"]
         fs = FileSystemStorage()
         name = fs.save(video.name , video)
         context['url'] = fs.url(name)

@@ -9,7 +9,7 @@
 <p>Tap <a href="http://127.0.0.1:8000/accounts/logout/">here</a> to log out!</p>
 Here you could upload your videos
 <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
-    <input type="file" name="video">
+    <input type="file" name="file">
     <button type="submit">Upload</button>
 </form>
 {% else %}

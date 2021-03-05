@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import teacher
 from .teacher_form import teacher_form
+from django.views.generic import TemplateView
 # Create your views here.
 def teacherview(request,*args,**kwargs):
     form = teacher_form(request.POST or None)

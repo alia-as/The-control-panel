@@ -4,6 +4,7 @@ from .models import exercise
 from django import forms
 from django.shortcuts import HttpResponse
 from django.core.files.storage import FileSystemStorage
+from django.views.generic import TemplateView
 # Create your views here.
 
 def stu_exercises(request , *args,**kwargs):

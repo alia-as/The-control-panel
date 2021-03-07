@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>video</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+<p>Tap <a href="http://127.0.0.1:8000/accounts/logout/">here</a> to log out!</p>
+Here you could see videos
+
+{% for item in t %}
+    <li>
+        <a href="http://127.0.0.1:8000{{ item.movie_url }}/">
+        {{ item.movie_name }}  -  date: {{ item.movie_date }}
+        </a>
+    </li>
+{% endfor %}
+{% else %}
+<p>you are not login</p>
+<p>
+<a href="/accounts/login/">
+    Come here
+</a>
+to login
+</p>
+{% endif %}
+</body>
+</html>

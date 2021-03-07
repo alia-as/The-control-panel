@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+<p>Tap <a href="http://127.0.0.1:8000/accounts/logout/">here</a> to log out!</p>
+<h1>{{ obj.exercise_name }}</h1>
+<p>{{ obj.grade }}</p>
+<a href="../">
+    back
+</a>
+{% else %}
+<p>you are not login</p>
+<p>
+<a href="/accounts/login/">
+    Come here
+</a>
+to login
+</p>
+{% endif %}
+</body>
+</html>
